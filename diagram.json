@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "CESAR ALEJANDRO GUERRERO",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 96.6, "left": 6, "attrs": {} },
+    { "type": "wokwi-ili9341", "id": "lcd2", "top": -200.8, "left": 479.7, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 207.8,
+      "left": 556.8,
+      "attrs": { "color": "red", "key": "ArrowLeft" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 207.8,
+      "left": 441.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -84,
+      "left": 376.2,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "mega:6", "lcd2:CS", "green", [ "v-28.8", "h216.4", "v38.4", "h124.8" ] ],
+    [ "mega:7", "lcd2:D/C", "green", [ "v-48", "h245.6", "v76.8", "h124.8" ] ],
+    [ "mega:11", "lcd2:MOSI", "green", [ "v-57.6", "h297.2", "v96", "h124.81" ] ],
+    [ "lcd2:SCK", "mega:13", "green", [ "v67.2", "h-124.81", "v-115.2", "h-325.8" ] ],
+    [ "lcd2:MISO", "mega:12", "green", [ "v76.8", "h-192.01", "v-76.8", "h-268.8" ] ],
+    [ "lcd2:RST", "mega:10", "green", [ "v38.4", "h-124.8", "v-57.6", "h-268.5" ] ],
+    [ "lcd2:LED", "mega:5V.2", "red", [ "v0" ] ],
+    [ "lcd2:GND", "mega:GND.1", "black", [ "v86.4", "h-67.2", "v-144", "h-345.4" ] ],
+    [ "mega:5V.1", "lcd2:VCC", "red", [ "v-8.6", "h161" ] ],
+    [ "btn1:1.r", "mega:18", "blue", [ "v0", "h9.8", "v-28.8", "h-201.6" ] ],
+    [ "btn1:2.l", "mega:GND.5", "black", [ "h0", "v29" ] ],
+    [ "mega:19", "btn2:1.r", "blue", [ "v76.8", "h309.1", "v9.6" ] ],
+    [ "mega:GND.4", "btn2:2.l", "black", [ "v29.75", "h180.2", "v-57.6", "h-9.6" ] ],
+    [ "mega:GND.5", "bz1:1", "black", [ "v-8.65", "h26.2" ] ],
+    [ "mega:9", "bz1:2", "red", [ "v-86.4", "h239.3" ] ]
+  ],
+  "dependencies": {}
+}
